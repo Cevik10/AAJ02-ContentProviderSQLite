@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C6919190"
+    tools:context=".AddArtFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="331dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="16dp"
+        android:onClick="selectImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/select_image"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/textInputNameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="art name"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="13dp"
+            android:textColorHint="@color/white"
+            app:hintTextColor="#2A2439">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/artNameText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#07000000"
+                android:inputType="textPersonName"
+                android:padding="13dp"
+                android:textSize="19sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/textInputArtistNameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:hint="artist name"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="13dp"
+            android:textColorHint="@color/white"
+
+
+            app:hintTextColor="#2A2439"
+
+
+            >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/artistNameText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#07000000"
+                android:inputType="textPersonName"
+                android:padding="13dp"
+                android:textSize="19sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/textInputYearLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="year"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="13dp"
+            android:textColorHint="@color/white"
+            app:hintTextColor="#2A2439">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/yearText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#07000000"
+                android:inputType="textPersonName"
+                android:padding="13dp"
+                android:textSize="19sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_weight="2"
+            android:background="@drawable/custom_save_button"
+            android:backgroundTint="#5EB657"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_weight="2"
+            android:background="@drawable/custom_save_button"
+            android:backgroundTint="#B61515"
+
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:layout_weight="2"
+            android:background="@drawable/custom_save_button"
+            android:backgroundTint="#5696DC"
+            android:text="Update"
+
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
