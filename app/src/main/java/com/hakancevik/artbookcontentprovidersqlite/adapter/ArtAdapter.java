@@ -1,18 +1,24 @@
 package com.hakancevik.artbookcontentprovidersqlite.adapter;
 
+import android.graphics.Bitmap;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hakancevik.artbookcontentprovidersqlite.ArtListFragmentDirections;
 import com.hakancevik.artbookcontentprovidersqlite.R;
 import com.hakancevik.artbookcontentprovidersqlite.databinding.RecyclerRowBinding;
 import com.hakancevik.artbookcontentprovidersqlite.model.ArtModel;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class ArtAdapter extends RecyclerView.Adapter<ArtAdapter.ArtHolder> {
@@ -40,7 +46,15 @@ public class ArtAdapter extends RecyclerView.Adapter<ArtAdapter.ArtHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_artListFragment_to_showArtFragment);
+
+                ArtListFragmentDirections.ActionArtListFragmentToShowArtFragment action = ArtListFragmentDirections.actionArtListFragmentToShowArtFragment();
+
+                action.setArtName(artList.get(holder.getAdapterPosition()).getArtName());
+                action.setArtistName(artList.get(holder.getAdapterPosition()).getArtistName());
+                action.setArtYear(artList.get(holder.getAdapterPosition()).getArtYear());
+                action.setArtImage(artList.get(holder.getAdapterPosition()).getArtImage());
+
+                Navigation.findNavController(v).navigate(action);
             }
         });
 
@@ -51,6 +65,7 @@ public class ArtAdapter extends RecyclerView.Adapter<ArtAdapter.ArtHolder> {
     public int getItemCount() {
         return artList.size();
     }
+
 
     public class ArtHolder extends RecyclerView.ViewHolder {
 

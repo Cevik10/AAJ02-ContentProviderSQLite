@@ -44,7 +44,10 @@ public class AddArtFragment extends Fragment {
     ActivityResultLauncher<Intent> activityResultLauncher;
     ActivityResultLauncher<String> permissionLauncher;
     Bitmap selectedImage;
-    ArtContentProvider artContentProvider;
+
+    NavController navController;
+
+
 
 
     public AddArtFragment() {
@@ -70,6 +73,10 @@ public class AddArtFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        navController = Navigation.findNavController(view);
+
 
         registerLauncher();
 
@@ -155,6 +162,9 @@ public class AddArtFragment extends Fragment {
         contentValues.put(ArtContentProvider.IMAGE, bytes);
 
         getActivity().getApplicationContext().getContentResolver().insert(ArtContentProvider.CONTENT_URI, contentValues);
+
+        navController.navigate(R.id.action_addArtFragment_to_artListFragment);
+
         //Toast.makeText(requireContext(), "saved.", Toast.LENGTH_SHORT).show();
         //Navigation.findNavController(requireView()).navigate(R.id.action_addArtFragment_to_artListFragment);
 

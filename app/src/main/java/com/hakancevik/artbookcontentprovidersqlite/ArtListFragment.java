@@ -60,30 +60,16 @@ public class ArtListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        NavController navController = Navigation.findNavController(view);
+
+
         artList = new ArrayList<>();
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new ArtAdapter(artList);
         binding.recyclerView.setAdapter(adapter);
 
-        getDataFromContentProvider();
 
-
-        binding.floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavDirections action = ArtListFragmentDirections.actionArtListFragmentToAddArtFragment();
-                NavController navController = Navigation.findNavController(requireView());
-                navController.navigateUp(); // to clear previous navigation history
-                navController.navigate(action);
-            }
-        });
-
-
-    }
-
-
-    public void getDataFromContentProvider() {
 
         String Url = ArtContentProvider.URL;
         Uri artUri = Uri.parse(Url);
@@ -110,7 +96,19 @@ public class ArtListFragment extends Fragment {
 
         }
 
+
+
+        binding.floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                navController.navigate(R.id.action_artListFragment_to_addArtFragment);
+            }
+        });
+
+
     }
+
 
 
     @Override

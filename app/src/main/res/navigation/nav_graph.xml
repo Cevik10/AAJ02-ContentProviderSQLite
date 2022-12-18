@@ -34,5 +34,22 @@
         <action
             android:id="@+id/action_showArtFragment_to_artListFragment"
             app:destination="@id/artListFragment" />
+        <argument
+            android:name="artName"
+            app:argType="string"
+            android:defaultValue="None" />
+        <argument
+            android:name="artistName"
+            app:argType="string"
+            android:defaultValue="UnKnown" />
+        <argument
+            android:name="artYear"
+            app:argType="string"
+            android:defaultValue="Unknown" />
+        <argument
+            android:name="artImage"
+            app:argType="android.graphics.Bitmap"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>
